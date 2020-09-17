@@ -1,0 +1,70 @@
+%Image Sampling and Quantization%
+%Authors: Greg Sutton , Devendra Pandey , Saurabh Savara
+%Image Pricessing CSCI 6040 ECU Fall 2020
+
+
+
+img1=imread('las-vegas-1.jpg');
+img2=imread('las-vegas-2.jpg');
+img3=imread('las-vegas-3.jpg');
+
+%Convert Image to grey Scale if needed
+img1_g = rgb2gray(img1);
+
+
+%Spatial Resolution% 
+[x1,y1,z1] = size(img1);
+disp('Number of pixels for las-vegas-1.jpg')
+disp(x1*y1)
+[x1,y1,z1] = size(img2);
+disp('Number of pixels for las-vegas-2.jpg')
+disp(x1*y1)
+[x1,y1,z1] = size(img3);
+disp('Number of pixels for las-vegas-3.jpg')
+disp(x1*y1)
+
+
+
+%Intensity Resolution% 
+k = 8;
+rgbvalue=256;
+figure
+while (k > 0)
+ intensity = 2^k;
+ compression = rgbvalue / intensity;
+ newimage = uint8(floor(double(img1)/rgbvalue * intensity) * compression);
+ subplot(3, 3, k);
+ imshow(newimage, [0,255]);
+ title(['Intensity resolution 2^',num2str(k)]);
+ k = k - 2;
+end
+
+%Set values to increase or decrease size N of image, given run time it does
+%take longer with large values. 
+alter_N_value=[0.25,0.5,1,2];
+
+
+%Interpolation Technique Bilinear%
+for i =1 :length(alter_N_value) 
+x = imresize(img3,alter_N_value(i),'bilinear');
+figure;
+imshow(x);
+xlabel(['Interpolation Technique Bilinear with N factor  ',num2str(alter_N_value(i))]);
+end
+
+
+%Interpolation Technique Nearest%
+for i =1 :length(alter_N_value) 
+x = imresize(img3,alter_N_value(i),'nearest');
+figure
+imshow(x)
+xlabel(['Interpolation Technique Bilinear with N factor  ',num2str(alter_N_value(i))]);
+end
+
+%Interpolation Technique Bicubic%
+for i =1 :length(alter_N_value) 
+x = imresize(img3,alter_N_value(i),'bicubic');
+figure
+imshow(x)
+xlabel(['Interpolation Technique Bilinear with N factor  ',num2str(alter_N_value(i))]);
+end
