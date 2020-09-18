@@ -25,3 +25,9 @@ Image sampling and quantization
  Since  these  are  at  various  distances  from  the unknown pixel, closer pixels are given a higher weighting in  the  calculation.  
  Bicubic  produces  noticeably  sharper images than the previous two methods, and is perhaps the ideal combination of  processing time  and output quality. 
  For  this  reason  it  is  a  standard  in  many  image  editing programs including Adobe Photoshop, printer drivers and in-camera interpolation
+ 
+ 
+ Runtime Instructions 
+ Download .mlx file into Matlab. Import las-vegas-1.jpg, las-vegas-2.jpg, las-vegas-3.jpg into Matlab. Run script on Matlab and output is displayed on console. 
+ 
+ 
