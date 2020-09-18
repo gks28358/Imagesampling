@@ -27,7 +27,10 @@ Image sampling and quantization
  For  this  reason  it  is  a  standard  in  many  image  editing programs including Adobe Photoshop, printer drivers and in-camera interpolation
  
  
- Runtime Instructions 
- Download .mlx file into Matlab. Import las-vegas-1.jpg, las-vegas-2.jpg, las-vegas-3.jpg into Matlab. Run script on Matlab and output is displayed on console. 
+ #Runtime Instructions 
+ 
+ 1) Download .mlx file into Matlab. 
+ 2) Import las-vegas-1.jpg, las-vegas-2.jpg, las-vegas-3.jpg into Matlab. 
+ 3) Run script on Matlab and output is displayed on console. 
  
  
